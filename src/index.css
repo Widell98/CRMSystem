@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+  }
+  
+  .app {
+    display: flex;
+  }
+  
+  #link {
+  text-decoration: none;
+  color: rgb(46, 46, 46);
+  }
+  
+  /* ----- Nav ------ */
+  
+  nav {
+    height: 100vh;
+    background-color: rgb(43, 43, 63);
+    color: rgb(255,255,255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  nav .logo-container,
+  nav .controls-container {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  nav .logo-container img {
+    width: 20px;
+  }
+  
+  nav .icon {
+    color: rgb(255,255,255);
+  }
