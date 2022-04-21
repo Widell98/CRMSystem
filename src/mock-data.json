@@ -1,37 +1,37 @@
 [
   {
     "id": 1,
-    "fullName": "Jenny Chan",
-    "address": "3 waterfoot road",
-    "phoneNumber": "333-962-7516",
-    "email": "jenny.chan@email.com"
+    "fullName": "Olof Nordqvist",
+    "address": "Snarkroad 1",
+    "phoneNumber": "070-911",
+    "email": "OB.kallaren@email.com"
   },
   {
     "id": 2,
-    "fullName": "Jessica warren",
+    "fullName": "Sebastian Eriksen",
     "address": "4 tall town",
     "phoneNumber": "011-211-7516",
-    "email": "jessica.warren@email.com"
+    "email": "Sebastian.warren@email.com"
   },
   {
     "id": 3,
-    "fullName": "Tony Frank",
+    "fullName": "Erkan Widell",
     "address": "11 lesly road",
-    "phoneNumber": "788-962-7516",
-    "email": "tony.frank@email.com"
+    "phoneNumber": "12312908",
+    "email": "245@email.com"
   },
   {
     "id": 4,
-    "fullName": "Jeremy Clark",
-    "address": "333 miltown manor",
+    "fullName": "David Vallin",
+    "address": "911-oskarsparken",
     "phoneNumber": "011-962-111",
-    "email": "jeremy.clark@email.com"
+    "email": "Wallin98@email.com"
   },
   {
     "id": 5,
-    "fullName": "Raymond Edwards",
-    "address": "99 blue acres",
+    "fullName": "Stephnap",
+    "address": "Roffegatan 5",
     "phoneNumber": "3231-962-7516",
-    "email": "raymon.edwards@email.com"
+    "email": "Taennap@email.com"
   }
 ]
