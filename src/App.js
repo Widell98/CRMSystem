@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
@@ -17,6 +18,5 @@ const App = () => {
     </div>
   )
 }
-
 export default App
 
