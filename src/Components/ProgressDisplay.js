@@ -1,7 +1,7 @@
 const ProgressDisplay = () => {
     return(
         <div>
-
+ProgressDisplay
         </div>
     )
 }

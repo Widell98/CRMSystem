@@ -7,7 +7,7 @@ const Dashboard = () => {
         {
             category: 'Q1 2022',
             color: 'red',
-            title: 'NFT SAFETY',
+            title: 'Apple',
             owner: 'Erk',
             avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
             status: 'done',
@@ -18,31 +18,59 @@ const Dashboard = () => {
 
         },
         {
-            category: 'Q1 2022',
+            category: 'David',
             color: 'red',
-            title: 'NFT SAFETY',
+            title: 'Apple',
             owner: 'Erk',
             avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
             status: 'done',
-            priority: 3,
+            priority: 5,
             progress: 40,
             description: 'Make a video',
             timestamp: '2022-02-11TO7:36:17+0808'
 
         },
         {
-            category: 'Q2 2022',
-            color: 'blue',
-            title: 'NFT ',
+            category: 'David',
+            color: 'red',
+            title: 'Apple',
             owner: 'Erk',
             avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
-            status: 'working on it',
+            status: 'done',
             priority: 5,
-            progress: 70,
+            progress: 40,
             description: 'Make a video',
             timestamp: '2022-02-11TO7:36:17+0808'
 
-        }
+        },
+        {
+            category: 'Erik',
+            color: 'red',
+            title: 'Apple',
+            owner: 'Erk',
+            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            status: 'done',
+            priority: 5,
+            progress: 40,
+            description: 'Make a video',
+            timestamp: '2022-02-11TO7:36:17+0808'
+
+        },
+        {
+            category: 'Erik',
+            color: 'red',
+            title: 'Apple',
+            owner: 'Erk',
+            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            status: 'done',
+            priority: 5,
+            progress: 40,
+            description: 'Make a video',
+            timestamp: '2022-02-11TO7:36:17+0808'
+
+        },
+
+     
     ]
 
     const uniqueCateogires = [

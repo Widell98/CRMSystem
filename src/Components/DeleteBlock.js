@@ -1,7 +1,7 @@
 const DeleteBlock = () => {
     return(
         <div>
-
+DeleteBlock
         </div>
     )
 }
