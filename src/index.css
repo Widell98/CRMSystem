@@ -16,11 +16,11 @@ html, body {
   .test {
       background-color:blue;
   }
+
   /* ----- Nav ------ */
-  
   nav {
     height: 100vh;
-    background-color: rgb(43, 43, 63);
+    background-color: #FF6363;
     color: rgb(255,255,255);
     text-align: center;
     display: flex;
@@ -36,7 +36,7 @@ html, body {
   }
   
   nav .logo-container img {
-    width: 20px;
+    width: 30px;
   }
   
   nav .icon {
