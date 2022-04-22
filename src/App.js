@@ -7,13 +7,11 @@ const App = () => {
 
   return (
     <div className="app">
-<h1>hej</h1>
      <BrowserRouter>
      <Nav/>
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
        <Route path='/ticket' element={<TicketPage/>}/>
-
      </Routes>
      </BrowserRouter>
     </div>

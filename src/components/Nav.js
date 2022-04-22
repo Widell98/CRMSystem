@@ -7,7 +7,7 @@ const Nav = () => {
     return (
         <nav>
             <div className="logo-container">
-                <img src = {logo} alt="logo" />
+                <img src={logo} alt="logo" />
             </div>
             <div className="controls-container">
                 <div className="icon" onClick={() => navigate('/ticket')}>+</div>

@@ -13,6 +13,9 @@ html, body {
   color: rgb(46, 46, 46);
   }
   
+  .test {
+      background-color:blue;
+  }
   /* ----- Nav ------ */
   
   nav {
