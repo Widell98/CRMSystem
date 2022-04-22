@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
-import Nav from '../src/components/Nav'
+import Nav from './Components/Nav'
 
 const App = () => {
 
