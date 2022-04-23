@@ -1,9 +1,11 @@
-const AvatarDisplay = () => {
+import blankAvatar from '../images/blankAvatar.png'
+
+const AvatarDisplay = ({ticket}) => {
     return(
         <div className="avatar-conatiner">
-           {/* <div className="img-container">
-            <img src={ticket.avatar ? ticket.avatar : blankAvatar}/> //kollar om avatar finns i data annars visa en blankAvatar
-           </div> */}
+           <div className="img-container">
+            <img src={ticket.avatar ? ticket.avatar : blankAvatar} alt={'photo of' + ticket.owner}/>
+           </div>
         </div>
     )
 }

@@ -4,68 +4,56 @@ import TicketCard from '../Components/TicketCard'
 const Dashboard = () => {
 
     const tickets = [
+
         {
-            category: 'Q1 2022',
+            category: 'David',
             color: 'red',
-            title: 'Apple',
-            owner: 'Erk',
-            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            title: 'Burger King',
+            owner: 'bkKungen',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/250px-Burger_King_2020.svg.png',
             status: 'done',
             priority: 5,
             progress: 40,
-            description: 'Make a video',
+            description: 'great nuggets',
             timestamp: '2022-02-11TO7:36:17+0808'
 
         },
         {
             category: 'David',
             color: 'red',
-            title: 'Apple',
-            owner: 'Erk',
-            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            title: 'McDonalds',
+            owner: 'Mckungen',
+            avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/800px-McDonald%27s_Golden_Arches.svg.png',
             status: 'done',
             priority: 5,
             progress: 40,
-            description: 'Make a video',
+            description: 'great burgers',
             timestamp: '2022-02-11TO7:36:17+0808'
 
         },
         {
-            category: 'David',
-            color: 'red',
+            category: 'Erik',
+            color: 'black',
             title: 'Apple',
             owner: 'Erk',
-            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            avatar: 'https://pbs.twimg.com/profile_images/1283958620359516160/p7zz5dxZ.jpg',
             status: 'done',
             priority: 5,
             progress: 40,
-            description: 'Make a video',
+            description: 'best phones',
             timestamp: '2022-02-11TO7:36:17+0808'
 
         },
         {
             category: 'Erik',
             color: 'red',
-            title: 'Apple',
-            owner: 'Erk',
-            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
+            title: 'Coca-cola',
+            owner: 'Coke',
+            avatar: 'https://www.designbust.com/download/553/png/coca_cola_logo_icon512.png',
             status: 'done',
             priority: 5,
             progress: 40,
-            description: 'Make a video',
-            timestamp: '2022-02-11TO7:36:17+0808'
-
-        },
-        {
-            category: 'Erik',
-            color: 'red',
-            title: 'Apple',
-            owner: 'Erk',
-            avatar: 'https://www.google.se/search?q=mark+zuckerberg+round+icon&hl=sv&tbm=isch&sxsrf=APq-WBt_3ovrE7kvqrNYU0_WZmmFWtzbxQ%3A1650619555199&source=hp&biw=913&bih=951&ei=o3RiYq24CJWRxc8Prs2niAw&iflsig=AHkkrS4AAAAAYmKCs4ZdHbYG2lQKDhAJuu3LVBFZyE2d&oq=&gs_lcp=CgNpbWcQARgEMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnMgoIIxDvAxDqAhAnUABYAGCDFGgBcAB4AIABAIgBAJIBAJgBAKoBC2d3cy13aXotaW1nsAEK&sclient=img#imgrc=SGDVGxucjJoLfM',
-            status: 'done',
-            priority: 5,
-            progress: 40,
-            description: 'Make a video',
+            description: 'greatest drink ever',
             timestamp: '2022-02-11TO7:36:17+0808'
 
         },
