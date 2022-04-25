@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
-import Navbar from './Components/Nav'
+import Navbar from './Components/Navbar'
 
 const App = () => {
 
