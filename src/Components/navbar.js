@@ -1,31 +1,23 @@
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import logo from '../images/crm-logo.png'
+import { useNavigate } from 'react-router-dom'
 
+const Nav = () => {
+    const navigate = useNavigate()
 
+    return (
+        <nav>
+            <div className="logo-container">
+                <img src={logo} alt="logo" />
+            </div>
+            <div className="controls-container">
+                <div className="icon" onClick={() => navigate('/ticket')}>+</div>
+                <div className="icon" onClick={() => navigate('/')}>-</div>
+                <div className="icon" onClick={() => navigate('/EmployeePage')}>E</div>
 
-
-
-const OneNavBar = () => {
-  return (
-    <div className="topnavbar" >
-      <Navbar collapseOnSelect expand="lg" bg="danger" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">
-            <img src="https://assets.website-files.com/6217719b8567d8b43f6bce9e/6217755e8567d8c2036bdc4d_Logotype_dark.svg"></img>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-            </Nav>
-            <Nav>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-    </div >
-
-  )
+            </div>
+        </nav>
+    )
 }
-export default OneNavBar
 
+export default Nav
 
