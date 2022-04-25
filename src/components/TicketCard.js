@@ -5,6 +5,7 @@ import PriorityDisplay from "./PriorityDisplay"
 import ProgressDisplay from "./ProgressDisplay"
 import DeleteBlock from "./DeleteBlock"
 
+
 const TicketCard = ({ color, ticket }) => {
     return (
         <div className="ticket-card">
@@ -12,9 +13,9 @@ const TicketCard = ({ color, ticket }) => {
             <div className="ticket-color"></div>
                 <h3>{ticket.title}</h3>
                 <AvatarDisplay ticket={ticket}/>               
-                <StatusDisplay />
-                <PriorityDisplay />
-                <ProgressDisplay />
+                <StatusDisplay status={ticket.status}/>
+                <PriorityDisplay priority={ticket.priority} />
+                <ProgressDisplay progress={ticket.progress} />
 
             </Link>
             <DeleteBlock />

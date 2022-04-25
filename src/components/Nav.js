@@ -12,6 +12,8 @@ const Nav = () => {
             <div className="controls-container">
                 <div className="icon" onClick={() => navigate('/ticket')}>+</div>
                 <div className="icon" onClick={() => navigate('/')}>-</div>
+                <div className="icon" onClick={() => navigate('/EmployeePage')}>E</div>
+
             </div>
         </nav>
     )

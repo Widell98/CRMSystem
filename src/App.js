@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
+import EmployeePage from './Pages/EmployeePage'
 import Nav from './Components/Nav'
 
 const App = () => {
@@ -13,6 +14,8 @@ const App = () => {
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
        <Route path='/ticket' element={<TicketPage/>}/>
+       <Route path='/EmployeePage' element={<EmployeePage/>}/>
+
      </Routes>
      </BrowserRouter>
     </div>
