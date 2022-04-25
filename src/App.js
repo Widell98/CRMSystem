@@ -3,14 +3,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
-import Nav from './Components/Nav'
+import Navbar from './Components/Nav'
 
 const App = () => {
 
   return (
     <div className="app">
      <BrowserRouter>
-     <Nav/>
+     <Navbar/>
      <Routes>
        <Route path='/' element={<Dashboard/>}/>
        <Route path='/ticket' element={<TicketPage/>}/>
