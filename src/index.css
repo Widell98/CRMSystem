@@ -134,6 +134,26 @@ html, body {
     height: 100%;
   }
 
+  .ticket-card .delete-block {
+    background-color: rgb(211,211,211);
+    width: 50px;
+    margin: 2px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .ticket-card .delete-block .delete-icon {
+    width: 20px; 
+    height: 20px; 
+    border-radius: 10px;
+    background-color: rgb(61,61,61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255 );
+  }
+
   /* EmployeePAge */
   .Employee-page{
     display: flex; 
