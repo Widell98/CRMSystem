@@ -5,14 +5,16 @@ import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
 import Navbar from './Components/Navbar'
+import LoginPage from './Pages/LoginPage'
 import CalenderPage from './Pages/Calender'
 import CategoriesContext from './context'
+
 
 const App = () => {
   const [categories, setCategories] = useState(null)
   const value = { categories, setCategories }
 
-  return (
+ return (
     <div className="app">
       <CategoriesContext.Provider value={value}>
      <BrowserRouter>
@@ -23,6 +25,7 @@ const App = () => {
        <Route path='/ticket' element={<TicketPage/>}/>
        <Route path='/EmployeePage' element={<EmployeePage/>}/>
        <Route path='/CalenderPage' element={<CalenderPage/>}/>
+       <Route path='/LoginPage' element={<LoginPage />} />
 
      </Routes>
      </BrowserRouter>
