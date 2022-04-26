@@ -1,27 +1,35 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
 import Navbar from './Components/Navbar'
 import LoginPage from './Pages/LoginPage'
-
+import CalenderPage from './Pages/Calender'
+import CategoriesContext from './context'
 
 
 const App = () => {
+  const [categories, setCategories] = useState(null)
+  const value = { categories, setCategories }
 
-  return (
+ return (
     <div className="app">
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Dashboard />} />
-          <Route path='/ticket' element={<TicketPage />} />
-          <Route path='/EmployeePage' element={<EmployeePage />} />
-          <Route path='/LoginPage' element={<LoginPage />} />
+      <CategoriesContext.Provider value={value}>
+     <BrowserRouter>
+     <Navbar/>
+     <Routes>
 
-        </Routes>
-      </BrowserRouter>
+       <Route path='/' element={<Dashboard/>}/>
+       <Route path='/ticket' element={<TicketPage/>}/>
+       <Route path='/EmployeePage' element={<EmployeePage/>}/>
+       <Route path='/CalenderPage' element={<CalenderPage/>}/>
+       <Route path='/LoginPage' element={<LoginPage />} />
+
+     </Routes>
+     </BrowserRouter>
+     </CategoriesContext.Provider>
     </div>
   )
 }

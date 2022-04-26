@@ -34,9 +34,14 @@ html, body {
     display: flex;
     flex-direction: column;
   }
+
+  nav .controls-container .icon
+  {
+    width: 50px;
+  }
   
   nav .logo-container img {
-    width: 30px;
+    width: 25px;
   }
   
   nav .icon {
@@ -154,45 +159,43 @@ html, body {
     color: rgb(255, 255, 255 );
   }
 
-  /* EmployeePAge */
-  .Employee-page{
-    display: flex; 
-    width: 100%
-  }
+  /* ---- Ticket page ---- */
 
-  .Employee-page #link {
-    display: flex; 
+  .ticket {
+    padding: 30px;
     width: 100%;
   }
 
-  .Employee-page #link > * {
-    background-color: rgb(221,221,221);
-    margin: 2px;
-    padding: 20px; 
+  .ticket .ticket-container {
     width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .Employee-page .ticket-color {
-    width: 15px !important; 
-    padding: 10px !important; 
-    margin: 2px;
-  }
-
-  .Employee-page .avatar-container {
     display: flex;
     justify-content: center;
-    width: 80px; 
   }
 
-  .Employee-page .img-container {
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    overflow: hidden;
-    align-items: center;
+  .ticket form {
+    display: flex;
   }
 
-  .Employee-page .img-container img {
-    width: 100%
+  .ticket form section {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 500px;
+  }
+
+  .ticket form label {
+    margin: 20px 0 0 0;
+  }
+
+  .ticket form select,
+  .ticket form input {
+    padding: 10px;
+    font-size: 15px; 
+    border-radius: 10px; 
+    border: 1.5px solid rgb(218, 218, 218);
+    margin: 5px;
+  }
+
+  .ticket form .multiple-input-container {
+    margin: 20px 0 20px 0;
   }
