@@ -1,7 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
 
-
-
 const Login = () => {
   const userRef = useRef();
   const errRef = useRef();
@@ -29,10 +27,10 @@ const Login = () => {
 
 
   return (
-    <section>
+    <section className="login-section">
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       <h1>Sign in</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <label htmlFor="username">Username:</label>
         <input
           type="text"

@@ -9,12 +9,11 @@ import LoginPage from './Pages/LoginPage'
 import CalenderPage from './Pages/Calender'
 import CategoriesContext from './context'
 
-
 const App = () => {
   const [categories, setCategories] = useState(null)
   const value = { categories, setCategories }
 
- return (
+  return (
     <div className="app">
       <CategoriesContext.Provider value={value}>
      <BrowserRouter>
