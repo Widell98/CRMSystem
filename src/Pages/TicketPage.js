@@ -1,34 +1,54 @@
-import { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useContext, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import CategoriesContext from '../context'
 
-const TicketPage = () => {
-
-    const [formData, setFormData] = useState({
-        status: 'not started',
-        progress: 0,
-        timestamp: new Date().toISOString(),
-      })
-
-    const editMode = false
-    const {categories, setCategories} = useContext(CategoriesContext) 
+const TicketPage = ({editMode}) => {
+  const {categories, setCategories} = useContext(CategoriesContext) 
+  
+  const [formData, setFormData] = useState({
+    status: 'not started',
+    progress: 0,
+    timestamp: new Date().toISOString()
+  })
 
     const navigate = useNavigate()
+    let {id} = useParams()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        if(editMode) {
+          const response = await axios.put(`http://localhost:8000/clients/${id}`, {
+            data: formData
+          })
+            const success = response.status === 200
+            if (success) {
+                navigate ('/') // navigerar tillbaks till homepage om det är lyckat
+            }
+        }
 
         if (!editMode) {
             const response = await axios.post('http://localhost:8000/clients', {
                 formData
             })
-            const success = response.status == 200
+            const success = response.status === 200
             if (success) {
                 navigate ('/') // navigerar tillbaks till homepage om det är lyckat
             }
         }
     }
+
+    const fetchData = async () => {
+      const response = await axios.get(`http://localhost:8000/clients/${id}`)
+      setFormData(response.data.data)
+    }
+
+    useEffect(() => {
+      if (editMode) fetchData()
+    }, [])
+
+    console.log(formData)
 
     const handleChange = (e) => {
         const value = e.target.value

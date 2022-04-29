@@ -21,7 +21,8 @@ const App = () => {
      <Routes>
 
        <Route path='/' element={<Dashboard/>}/>
-       <Route path='/ticket' element={<TicketPage/>}/>
+       <Route path='/clients' element={<TicketPage/>}/>
+       <Route path='/clients/:id' element={<TicketPage editMode={true}/>}/>
        <Route path='/EmployeePage' element={<EmployeePage/>}/>
        <Route path='/CalenderPage' element={<CalenderPage/>}/>
        <Route path='/LoginPage' element={<LoginPage />} />

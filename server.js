@@ -18,7 +18,6 @@ app.get('/clients', async (req, res) => {
         headers: {
             Accepts: 'application/json',
             'X-Cassandra-Token': token,
-
         },
     }
     try {
@@ -30,7 +29,24 @@ app.get('/clients', async (req, res) => {
     }
 })
 
+app.get('/clients/:documentId', async (req, res) => {
+    const id = req.params.documentId
 
+    const options = {
+        method: 'GET',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token, 
+        }
+    }
+    try {
+        const response = await axios(`${url}/${id}`, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
 
 app.post('/clients', async (req, res) => {
     const formData = req.body.formData
@@ -53,6 +69,33 @@ app.post('/clients', async (req, res) => {
         res.status(500).json({ message: err })
     }
 })
+
+
+app.put('/clients/:documentId', async (req, res) => {
+    const id = req.params.documentId
+    const data = req.body.data
+
+    const options = {
+        method: 'PUT',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token, 
+        },
+        data
+    }
+    try {
+        const response = await axios(`${url}/${id}`, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
+
+
+
+
+
 
 
 app.delete('/clients/:documentId', async (req, res) => {
