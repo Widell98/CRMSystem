@@ -46,7 +46,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <h1> My projects</h1>
+            <h1 className="dashboard-title"> My projects</h1>
             <div className="ticket-container">
                 {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
                     <div Key={categoryIndex}>
