@@ -29,6 +29,7 @@ app.get('/clients', async (req, res) => {
     }
 })
 
+// Hämta en post
 app.get('/clients/:documentId', async (req, res) => {
     const id = req.params.documentId
 
@@ -37,16 +38,17 @@ app.get('/clients/:documentId', async (req, res) => {
         headers: {
             Accepts: 'application/json',
             'X-Cassandra-Token': token, 
-        }
+            'Content-Type': 'application/json',
+        },
     }
     try {
         const response = await axios(`${url}/${id}`, options)
         res.status(200).json(response.data)
-    } catch (err) {
+      } catch (err) {
         console.log(err)
         res.status(500).json({ message: err })
-    }
-})
+      }
+    })
 
 app.post('/clients', async (req, res) => {
     const formData = req.body.formData
@@ -58,7 +60,7 @@ app.post('/clients', async (req, res) => {
             'X-Cassandra-Token': token,
             'Content-Type': 'application/json'
         },
-        data: formData
+        data: formData,
     }
 
     try {
@@ -93,11 +95,6 @@ app.put('/clients/:documentId', async (req, res) => {
 })
 
 
-
-
-
-
-
 app.delete('/clients/:documentId', async (req, res) => {
     const id = req.params.documentId
 
@@ -118,15 +115,5 @@ app.delete('/clients/:documentId', async (req, res) => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
 app.listen(PORT, () => console.log('listening on port' + PORT))
+

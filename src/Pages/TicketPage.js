@@ -4,23 +4,33 @@ import axios from 'axios'
 import CategoriesContext from '../context'
 
 const TicketPage = ({editMode}) => {
-  const {categories, setCategories} = useContext(CategoriesContext) 
   
   const [formData, setFormData] = useState({
     status: 'not started',
     progress: 0,
+    // category: categories[0],
     timestamp: new Date().toISOString()
   })
+  const {categories, setCategories} = useContext(CategoriesContext) 
+  const navigate = useNavigate()
+  let {id} = useParams()
+  
+  const handleChange = (e) => {
+    const value = e.target.value
+    const name = e.target.name
+    
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
 
-    const navigate = useNavigate()
-    let {id} = useParams()
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
-        if(editMode) {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    if(editMode) {
           const response = await axios.put(`http://localhost:8000/clients/${id}`, {
-            data: formData
+            data: formData,
           })
             const success = response.status === 200
             if (success) {
@@ -30,7 +40,7 @@ const TicketPage = ({editMode}) => {
 
         if (!editMode) {
             const response = await axios.post('http://localhost:8000/clients', {
-                formData
+                formData,
             })
             const success = response.status === 200
             if (success) {
@@ -41,24 +51,20 @@ const TicketPage = ({editMode}) => {
 
     const fetchData = async () => {
       const response = await axios.get(`http://localhost:8000/clients/${id}`)
+      console.log('AAAAAA', response)
       setFormData(response.data.data)
     }
 
     useEffect(() => {
-      if (editMode) fetchData()
+      if (editMode) {
+        fetchData()
+      }
     }, [])
 
-    console.log(formData)
+    console.log('EDITcategories', categories)
+    console.log('formData', formData.status)
+    console.log('formData.status', formData.status === 'stuck')
 
-    const handleChange = (e) => {
-        const value = e.target.value
-        const name = e.target.name
-
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
-    }
 
     return (
         <div className="ticket">

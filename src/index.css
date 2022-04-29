@@ -38,9 +38,7 @@ html, body {
   }
 
   nav .controls-container .icon
-  {
-width: 0;
-  }
+  { width: 0; }
   
   nav .logo-container img {
     width: 25px;
@@ -119,7 +117,6 @@ width: 0;
   
   .ticket-card .priority-display .star-container {
     display: flex; 
-    justify-content: center;
   }
 
   .ticket-card .priority-display .star-container h3 {

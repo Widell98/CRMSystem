@@ -14,17 +14,16 @@ const Dashboard = () => {
         const dataObject = response.data.data
 
         const arrayOfKeys = Object.keys(dataObject)
-        const arrayofData = Object.keys(dataObject).map((key) => dataObject[key])
+        const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
         const formattedArray = []
         arrayOfKeys.forEach((key, index) => {
-            const formattedData = { ...arrayofData[index] }
-            formattedData['documentId'] = key 
-            formattedArray.push(formattedData)
+          const formmatedData = { ...arrayOfData[index] }
+          formmatedData['documentId'] = key
+          formattedArray.push(formmatedData)
         })
+
        setTickets(formattedArray)
     }, [])
-
-
 
     useEffect(() => {
         setCategories([...new Set(tickets?.map(({ category }) =>  category))])
@@ -49,7 +48,7 @@ const Dashboard = () => {
             <h1 className="dashboard-title"> My projects</h1>
             <div className="ticket-container">
                 {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-                    <div Key={categoryIndex}>
+                    <div key={categoryIndex}>
                         <h3>{uniqueCategory}</h3>
 
                         {tickets.filter(ticket => ticket.category === uniqueCategory)
