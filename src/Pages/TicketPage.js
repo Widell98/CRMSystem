@@ -1,44 +1,70 @@
-import { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useContext, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import CategoriesContext from '../context'
 
-const TicketPage = () => {
+const TicketPage = ({editMode}) => {
+  
+  const [formData, setFormData] = useState({
+    status: 'not started',
+    progress: 0,
+    // category: categories[0],
+    timestamp: new Date().toISOString()
+  })
+  const {categories, setCategories} = useContext(CategoriesContext) 
+  const navigate = useNavigate()
+  let {id} = useParams()
+  
+  const handleChange = (e) => {
+    const value = e.target.value
+    const name = e.target.name
+    
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
 
-    const [formData, setFormData] = useState({
-        status: 'not started',
-        progress: 0,
-        timestamp: new Date().toISOString(),
-      })
-
-    const editMode = false
-    const {categories, setCategories} = useContext(CategoriesContext) 
-
-    const navigate = useNavigate()
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    if(editMode) {
+          const response = await axios.put(`http://localhost:8000/clients/${id}`, {
+            data: formData,
+          })
+            const success = response.status === 200
+            if (success) {
+                navigate ('/') // navigerar tillbaks till homepage om det är lyckat
+            }
+        }
 
         if (!editMode) {
             const response = await axios.post('http://localhost:8000/clients', {
-                formData
+                formData,
             })
-            const success = response.status == 200
+            const success = response.status === 200
             if (success) {
                 navigate ('/') // navigerar tillbaks till homepage om det är lyckat
             }
         }
     }
 
-    const handleChange = (e) => {
-        const value = e.target.value
-        const name = e.target.name
-
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }))
+    const fetchData = async () => {
+      const response = await axios.get(`http://localhost:8000/clients/${id}`)
+      console.log('AAAAAA', response)
+      setFormData(response.data.data)
     }
+
+    useEffect(() => {
+      if (editMode) {
+        fetchData()
+      }
+    }, [])
+
+    console.log('EDITcategories', categories)
+    console.log('formData', formData.status)
+    console.log('formData.status', formData.status === 'stuck')
+
 
     return (
         <div className="ticket">
