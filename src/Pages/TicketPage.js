@@ -68,11 +68,11 @@ const TicketPage = ({editMode}) => {
 
     return (
         <div className="ticket">
-          <h1>{editMode ? 'Update Your Ticket' : 'Create a Ticket'}</h1>
+          <h1>{editMode ? 'Update Your Ticket' : 'Add a client'}</h1>
           <div className="ticket-container">
             <form onSubmit={handleSubmit}>
               <section>
-                <label htmlFor="title">Title</label>
+                <label htmlFor="title">Company Name</label>
                 <input
                   id="title"
                   name="title"
@@ -80,6 +80,15 @@ const TicketPage = ({editMode}) => {
                   onChange={handleChange}
                   required={true}
                   value={formData.title}
+                />
+
+                <label htmlFor="location">Location</label>
+                <input
+                  id="location"
+                  name="location"
+                  type="text"
+                  onChange={handleChange}
+                  value={formData.location}
                 />
     
                 <label htmlFor="description">Description</label>
@@ -92,18 +101,18 @@ const TicketPage = ({editMode}) => {
                   value={formData.description}
                 />
     
-                <label>Category</label>
+                <label>Employee</label>
                 <select
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
                 >
-                    {categories?.map((category, _index) => (
+                   {categories?.map((category, _index) => (
                 <option value={category}>{category}</option>
               ))}
-                </select>
+            </select>
     
-                <label htmlFor="new-category">New Category</label>
+                <label htmlFor="new-category">Add Employee</label>
                 <input
                   id="new-category"
                   name="category"
@@ -223,6 +232,7 @@ const TicketPage = ({editMode}) => {
                   type="url"
                   onChange={handleChange}
                 />
+                
                 <div className="img-preview">
                   {formData.avatar && (
                     <img src={formData.avatar} alt="image preview" />

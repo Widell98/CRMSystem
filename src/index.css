@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
 
 html, body {
     margin: 0;
@@ -18,6 +19,8 @@ html, body {
   .test {
       background-color:blue;
   }
+
+
 
   /* ----- Nav ------ */
   nav {
@@ -52,10 +55,17 @@ html, body {
   /* Dashboard */
   .dashboard {
     padding: 35px;
-    width: 100%
+    width: 100%;  
+    margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
   }
+
+
   .dashboard-title {
- margin: 0 0 25px 0;
+    font-size: 50px;
+ margin: 0px 0px 40px 0px;
+ font-family: 'Rubik', sans-serif;
   } 
 
   .dashboard .ticket-container {
@@ -66,7 +76,8 @@ html, body {
   /* TicketCard */
   .ticket-card {
     display: flex; 
-    width: 100%
+    width: 100%;
+    
   }
 
   .ticket-card #link {
@@ -172,7 +183,8 @@ html, body {
   .ticket .ticket-container {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    
   }
 
   .ticket form {
@@ -200,7 +212,7 @@ html, body {
   }
 
   .ticket form .multiple-input-container {
-    margin: 20px 0 20px 0;
+    margin: 20px 0 20px 10;
   }
 
   /* LoginPage */
