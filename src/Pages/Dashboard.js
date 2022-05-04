@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import TicketCard from '../Components/TicketCard'
 import axios from 'axios'
 import CategoriesContext from '../context'
+import Header from '../Components/Header'
 
 const Dashboard = () => {
 
@@ -47,19 +48,24 @@ const Dashboard = () => {
         <div className="dashboard">
             <h1 className="dashboard-title"> My projects</h1>
             <div className="ticket-container">
-                {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-                    <div key={categoryIndex}>
-                        <h3>{uniqueCategory}</h3>
 
+                <Header/>       
+           
+
+                {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
+                    <div key={categoryIndex}> 
+                        <h3>{uniqueCategory}</h3>
                         {tickets.filter(ticket => ticket.category === uniqueCategory)
                             .map((filteredTicket, _index) => (
                                 <TicketCard
                                     id={_index}
                                     color={colors[categoryIndex] || colors[0]}
                                     ticket={filteredTicket}
-                                />
+                                />                
                             ))
-                        }
+                        }  
+                        
+                                                                                  
                     </div>
                 ))}
             </div>
