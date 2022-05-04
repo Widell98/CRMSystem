@@ -214,6 +214,9 @@ html, body {
   .ticket form .multiple-input-container {
     margin: 20px 0 20px 10;
   }
+  .description-label{
+    font-size:40px;
+  }
 
   /* LoginPage */
 

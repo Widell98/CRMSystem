@@ -91,7 +91,7 @@ const TicketPage = ({editMode}) => {
                   value={formData.location}
                 />
     
-                <label htmlFor="description">Description</label>
+                <label className="description-label" htmlFor="description">Description</label>
                 <input
                   id="description"
                   name="description"
@@ -215,17 +215,17 @@ const TicketPage = ({editMode}) => {
               </section>
     
               <section>
-                <label htmlFor="owner">Owner</label>
+                <label htmlFor="Telephone"> Telephone </label>
                 <input
-                  id="owner"
-                  name="owner"
-                  type="owner"
+                  id="Telephone"
+                  name="Telephone"
+                  type="text"
                   onChange={handleChange}
                   required={true}
-                  value={formData.owner}
+                  value={formData.Telephone}
                 />
     
-                <label htmlFor="avatar">Avatar</label>
+                <label htmlFor="avatar">Logo</label>
                 <input
                   id="avatar"
                   name="avatar"

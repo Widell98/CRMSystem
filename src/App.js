@@ -5,7 +5,6 @@ import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
 import Navbar from './Components/Navbar'
-import LoginPage from './Pages/LoginPage'
 import CalenderPage from './Pages/Calender'
 import CategoriesContext from './context'
 
@@ -25,7 +24,6 @@ const App = () => {
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
             <Route path='/EmployeePage' element={<EmployeePage />} />
             <Route path='/CalenderPage' element={<CalenderPage />} />
-            <Route path='/LoginPage' element={<LoginPage />} />
 
           </Routes>
         </BrowserRouter>
