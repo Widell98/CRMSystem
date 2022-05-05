@@ -8,6 +8,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+
+const employeeurl = 'https://07dd3ed3-c8ec-4544-9917-cd74580d8ed3-us-east1.apps.astra.datastax.com/api/rest/v2/namespaces/Employees/collections/people'
 const url = 'https://07dd3ed3-c8ec-4544-9917-cd74580d8ed3-us-east1.apps.astra.datastax.com/api/rest/v2/namespaces/clients/collections/tasks'
 const token = 'AstraCS:ROaZebRsNmEshfrRGqZFySqJ:94060cfd1ebc7efb58537b922b4c69d481af62ac8fe2c80de7dafc385131af6f'
 
@@ -107,6 +109,27 @@ app.delete('/clients/:documentId', async (req, res) => {
     }
     try {
         const response = await axios(`${url}/${id}`, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
+
+
+
+// Employees
+
+app.get('/Employees', async (req, res) => {
+    const options = {
+        method: 'GET',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token,
+        },
+    }
+    try {
+        const response = await axios(`${employeeurl}?page-size=20`, options)
         res.status(200).json(response.data)
     } catch (err) {
         console.log(err)
