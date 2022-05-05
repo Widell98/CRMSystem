@@ -5,9 +5,9 @@ import Dashboard from './Pages/Dashboard'
 import TicketPage from './Pages/TicketPage'
 import EmployeePage from './Pages/EmployeePage'
 import Navbar from './Components/Navbar'
-import LoginPage from './Pages/LoginPage'
 import CalenderPage from './Pages/Calender'
 import CategoriesContext from './context'
+import LoginPage from './Pages/Login'
 
 const App = () => {
   const [categories, setCategories] = useState(null)
@@ -18,6 +18,7 @@ const App = () => {
       <CategoriesContext.Provider value={value}>
         <BrowserRouter>
           <Navbar />
+
           <Routes>
 
             <Route path='/' element={<Dashboard />} />

@@ -1,306 +1,370 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-  }
-  
-  .app {
-    display: flex;
-  }
-  
-  #link {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+}
+
+#link {
   text-decoration: none;
   color: rgb(46, 46, 46);
-  }
-  
-  .test {
-      background-color:blue;
-  }
+}
+
+.test {
+  background-color: blue;
+}
 
 
 
-  /* ----- Nav ------ */
-  nav {
-    height: 100vh;
-    background-color: #FF6363;
-    /* background-color: rgb(43, 43, 63); */
-    color: rgb(255,255,255);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  nav .logo-container,
-  nav .controls-container {
-    padding: 40px 25px;
-    display: flex;
-    flex-direction: column;
-  }
+/*----- Nav ------ */
+nav {
+  height: 100vh;
+  background-color: #FF6363;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  nav .controls-container .icon
-  { width: 0; }
-  
-  nav .logo-container img {
-    width: 25px;
-  }
-  
-  nav .icon {
-    color: rgb(255,255,255);
-  }
+nav .logo-container,
+nav .controls-container {
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+}
 
-  /* Dashboard */
-  .dashboard {
-    padding: 35px;
-    width: 100%;  
-    margin:auto;
-	border-collapse:separate;
-	border-spacing:0;
-  }
+nav .controls-container .icon {
+  width: 0;
+}
 
+nav .logo-container img {
+  width: 25px;
+}
 
-  .dashboard-title {
-    font-size: 50px;
- margin: 0px 0px 40px 0px;
- font-family: 'Rubik', sans-serif;
-  } 
+nav .icon {
+  color: rgb(255, 255, 255);
+}
 
-  .dashboard .ticket-container {
-    height: 80vh;
-    overflow: scroll;
-  }
-
-  /* TicketCard */
-  .ticket-card {
-    display: flex; 
-    width: 100%;
-    
-  }
-
-  .ticket-card #link {
-    display: flex; 
-    width: 100%;
-  }
-
-  .ticket-card #link > * {
-    background-color: rgb(221,221,221);
-    margin: 2px;
-    padding: 20px; 
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .ticket-card .ticket-color {
-    width: 15px !important; 
-    padding: 10px !important; 
-    margin: 2px;
-  }
-
-  .ticket-card .avatar-container {
-    display: flex;
-    justify-content: center;
-    width: 80px; 
-  }
-
-  .ticket-card .img-container {
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    overflow: hidden;
-    align-items: center;
-  }
-
-  .ticket-card .img-container img {
-    width: 100%
-  }
-
-  .ticket-card .status-display {
-    display: flex; 
-    justify-content: center;
-  }
-
-  .ticket-card .priority-display {
-    display: flex; 
-    justify-content: center;
-  }
-  
-  .ticket-card .priority-display .star-container {
-    display: flex; 
-  }
-
-  .ticket-card .priority-display .star-container h3 {
-    margin : 7px; 
-    padding: 0; 
-  }
-
-  .ticket-card .progress-display {
-    min-width: 200px;
-  }
-
-  .ticket-card .progress-bar {
-    width:100%;
-    height: 30px;
-    background-color: rgb(158,158,158);
-    border-radius: 15px;
-    overflow: hidden;   
-  }
-
-  .ticket-card .progress-bar .progress-indicator {
-    background-color: rgb(104,104, 175);
-    height: 100%;
-  }
-
-  .ticket-card .delete-block {
-    background-color: rgb(211,211,211);
-    width: 50px;
-    margin: 2px;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-  }
-
-  .ticket-card .delete-block .delete-icon {
-    width: 20px; 
-    height: 20px; 
-    border-radius: 10px;
-    background-color: rgb(61,61,61);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(255, 255, 255 );
-  }
-
-  /* ---- Ticket page ---- */
-
-  .ticket {
-    padding: 30px;
-    width: 100%;
-  }
-
-  .ticket .ticket-container {
-    width: 100%;
-    display: flex;
-    justify-content: left;
-    
-  }
-
-  .ticket form {
-    display: flex;
-  }
-
-  .ticket form section {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    width: 500px;
-  }
-
-  .ticket form label {
-    margin: 20px 0 0 0;
-  }
-
-  .ticket form select,
-  .ticket form input {
-    padding: 10px;
-    font-size: 15px; 
-    border-radius: 10px; 
-    border: 1.5px solid rgb(218, 218, 218);
-    margin: 5px;
-  }
-
-  .ticket form .multiple-input-container {
-    margin: 20px 0 20px 10;
-  }
-
-  /* LoginPage */
-
-.login-section {
+/* Dashboard */
+.dashboard {
+  padding: 35px;
   width: 100%;
-  max-width: 420px;
-  min-height: 400px;
+  margin: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+
+.dashboard-title {
+  font-size: 50px;
+  margin: 0px 0px 40px 0px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.dashboard .ticket-container {
+  height: 80vh;
+  overflow: scroll;
+}
+
+/* TicketCard */
+.ticket-card {
+  display: flex;
+  width: 100%;
+
+}
+
+.ticket-card #link {
+  display: flex;
+  width: 100%;
+}
+
+.ticket-card #link>* {
+  background-color: rgb(221, 221, 221);
+  margin: 2px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ticket-card .ticket-color {
+  width: 15px !important;
+  padding: 10px !important;
+  margin: 2px;
+}
+
+.ticket-card .avatar-container {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+}
+
+.ticket-card .img-container {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.ticket-card .img-container img {
+  width: 100%
+}
+
+.ticket-card .status-display {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-card .priority-display {
+  display: flex;
+  justify-content: center;
+}
+
+.ticket-card .priority-display .star-container {
+  display: flex;
+}
+
+.ticket-card .priority-display .star-container h3 {
+  margin: 7px;
+  padding: 0;
+}
+
+.ticket-card .progress-display {
+  min-width: 200px;
+}
+
+.ticket-card .progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(158, 158, 158);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.ticket-card .progress-bar .progress-indicator {
+  background-color: rgb(104, 104, 175);
+  height: 100%;
+}
+
+.ticket-card .delete-block {
+  background-color: rgb(211, 211, 211);
+  width: 50px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-card .delete-block .delete-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+/* ---- Ticket page ---- */
+
+.ticket {
+  padding: 30px;
+  width: 100%;
+}
+
+.ticket .ticket-container {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+
+}
+
+.ticket form {
+  display: flex;
+}
+
+.ticket form section {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  width: 500px;
 }
 
-.login-form{
+.ticket form label {
+  margin: 20px 0 0 0;
+}
+
+.ticket form select,
+.ticket form input {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1.5px solid rgb(218, 218, 218);
+  margin: 5px;
+}
+
+.ticket form .multiple-input-container {
+  margin: 20px 0 20px 10;
+}
+
+
+/* LoginPage */
+
+.xlogin {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.xinputs,
+.xloginbuttons {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.xlogin-page {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  flex-grow: 1;
-  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #53565A;
 }
 
-a,
-a:visited {
-  color: #fff;
-}
-
-input[type="text"],
-input[type="password"],
-button,
-textarea {
-  font-family: 'Nunito', sans-serif;
-  font-size: 22px;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
-}
-
-label,
-button {
-  margin-top: 1rem;
-}
-
-button {
-  padding: 0.5rem;
-}
-
-.instructions {
-  font-size: 0.75rem;
-  border-radius: 0.5rem;
-  background: #000;
-  color: #fff;
-  padding: 0.25rem;
+.xlogin {
+  display: block;
   position: relative;
-  bottom: -10px;
 }
 
-.instructions>svg {
-  margin-right: 0.25rem;
-}
-
-.offscreen {
+.xlogin:after {
+  content: "";
+  display: block;
   position: absolute;
-  left: -9999px;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
 }
 
-.hide {
-  display: none;
+
+.xlogin,
+.x-inner {
+  position: relative;
+  display: block;
+  background-color: white;
+  padding: 30px;
+  z-index: 2;
 }
 
-.valid {
-  color: limegreen;
-  margin-left: 0.25rem;
+.xlogin,
+.x-inner,
+.loginh2 {
+  color: #888;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
 }
 
-.invalid {
-  color: red;
-  margin-left: 0.25rem;
+.xlogin,
+.x-inner,
+.xgroup {
+  display: block;
+  width: 300px;
+  margin-bottom: 15px;
 }
 
-.errmsg {
-  background-color: lightpink;
-  color: firebrick;
-  font-weight: bold;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+.x-inner,
+.xgroup,
+.x-label {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+  transition: 0.4s;
 }
 
-.line {
+.x-inner,
+.xgroup:focus-within,
+.x-label {
+  color: #FE4880;
+}
+
+.xlogin,
+.x-inner,
+.xgroup,
+.xinputs {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+
+
+
+.xlogin,
+.x-inner,
+.xgroup,
+.xinputs:focus {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+.xlogin,
+.x-inner,
+.xinputs[type="submit"],
+.welcome,
+.xloginbutton {
   display: inline-block;
-} 
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.xlogin,
+.x-inner,
+.xinputs[type="submit"]:hover,
+.welcome,
+.xloginbutton:hover {
+  background-position: 100% 0%;
+}
+
+.welcome {
+  width: 100%;
+  max-width: 480px;
+  background-color: white;
+  padding: 15px 30px;
+}
+
+.welcome h2 {
+  color: #888;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.welcome h2 span {
+  color: #FE4880;
+  font-weight: 700;
+}
