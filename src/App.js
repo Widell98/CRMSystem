@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import Dashboard from './Pages/Dashboard'
@@ -26,6 +25,7 @@ const App = () => {
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
             <Route path='/EmployeePage' element={<EmployeePage />} />
             <Route path='/CalenderPage' element={<CalenderPage />} />
+            <Route path='/LoginPage' element={<LoginPage />} />
 
           </Routes>
         </BrowserRouter>
