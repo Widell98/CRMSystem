@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik&display=swap');
 
-html,
+*/ html,
 body {
   margin: 0;
   padding: 0;
@@ -32,6 +32,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 nav .logo-container,
@@ -220,31 +221,43 @@ nav .icon {
 
 /* LoginPage */
 
-.xlogin {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.xinputs,
-.xloginbuttons {
-  appearance: none;
-  background: none;
-  border: none;
-  outline: none;
-}
-
 .xlogin-page {
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #53565A;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  background-color: white;
+  width: 100%;
 }
 
 .xlogin {
   display: block;
   position: relative;
+  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
+  padding: 25px;
+  width: 500px;
+  max-width: 100%;
+}
+
+.xinputs {
+  appearance: none;
+  background: none;
+  outline: none;
+  width: 85%;
+  border-color: lightgrey;
+  height: 25px;
+}
+
+
+
+.xloginbutton {
+  appearance: none;
+  background: none;
+  outline: none;
 }
 
 .xlogin:after {
@@ -256,22 +269,15 @@ nav .icon {
   right: -5px;
   bottom: -5px;
   z-index: 1;
-  background-image: linear-gradient(to bottom right, #FFCE00, #FE4880);
 }
-
 
 .xlogin,
 .x-inner {
-  position: relative;
-  display: block;
   background-color: white;
-  padding: 30px;
-  z-index: 2;
+
 }
 
-.xlogin,
-.x-inner,
-.loginh2 {
+.xlogin .x-inner h2 {
   color: #888;
   font-size: 28px;
   font-weight: 500;
@@ -280,9 +286,8 @@ nav .icon {
 
 .xlogin,
 .x-inner,
-.xgroup {
+.x-group {
   display: block;
-  width: 300px;
   margin-bottom: 15px;
 }
 
@@ -299,72 +304,12 @@ nav .icon {
 .x-inner,
 .xgroup:focus-within,
 .x-label {
-  color: #FE4880;
+  color: black;
 }
 
-.xlogin,
-.x-inner,
-.xgroup,
-.xinputs {
-  display: block;
+.x-inner {
+  padding: 20px;
   width: 100%;
-  padding: 10px 15px;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  transition: 0.4s;
-}
-
-
-
-.xlogin,
-.x-inner,
-.xgroup,
-.xinputs:focus {
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
-}
-
-
-.xlogin,
-.x-inner,
-.xinputs[type="submit"],
-.welcome,
-.xloginbutton {
-  display: inline-block;
-  padding: 10px 15px;
-  border-radius: 8px;
-  background-image: linear-gradient(to right, #FFCE00 50%, #FFCE00 50%, #FE4880);
-  background-size: 200%;
-  background-position: 0%;
-  transition: 0.4s;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-
-}
-
-.xlogin,
-.x-inner,
-.xinputs[type="submit"]:hover,
-.welcome,
-.xloginbutton:hover {
-  background-position: 100% 0%;
-}
-
-.welcome {
-  width: 100%;
-  max-width: 480px;
-  background-color: white;
-  padding: 15px 30px;
-}
-
-.welcome h2 {
-  color: #888;
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 30px;
-}
-
-.welcome h2 span {
-  color: #FE4880;
-  font-weight: 700;
+  position: relative;
+  z-index: 1001;
 }

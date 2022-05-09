@@ -3,11 +3,12 @@ import TicketCard from '../Components/TicketCard'
 import axios from 'axios'
 import CategoriesContext from '../context'
 import Header from '../Components/Header'
+import Navbar from '../Components/Navbar'
 
 const Dashboard = () => {
 
     const [tickets, setTickets] = useState(null)
-    const {categories, setCategories } = useContext(CategoriesContext)
+    const { categories, setCategories } = useContext(CategoriesContext)
 
     useEffect(async () => {
         const response = await axios.get('http://localhost:8000/clients')
@@ -18,19 +19,19 @@ const Dashboard = () => {
         const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
         const formattedArray = []
         arrayOfKeys.forEach((key, index) => {
-          const formmatedData = { ...arrayOfData[index] }
-          formmatedData['documentId'] = key
-          formattedArray.push(formmatedData)
+            const formmatedData = { ...arrayOfData[index] }
+            formmatedData['documentId'] = key
+            formattedArray.push(formmatedData)
         })
 
-       setTickets(formattedArray)
+        setTickets(formattedArray)
     }, [])
 
     useEffect(() => {
-        setCategories([...new Set(tickets?.map(({ category }) =>  category))])
-    } , [tickets])
+        setCategories([...new Set(tickets?.map(({ category }) => category))])
+    }, [tickets])
 
-    
+
     const colors = [
         'rgb(255,179,186)',
         'rgb(255,223,186)',
@@ -41,7 +42,7 @@ const Dashboard = () => {
 
     const uniqueCategories = [
         ...new Set(tickets?.map(({ category }) => category))
-      ]
+    ]
 
 
     return (
@@ -49,11 +50,11 @@ const Dashboard = () => {
             <h1 className="dashboard-title"> My projects</h1>
             <div className="ticket-container">
 
-                <Header/>       
-           
+                <Header />
+
 
                 {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
-                    <div key={categoryIndex}> 
+                    <div key={categoryIndex}>
                         <h3>{uniqueCategory}</h3>
                         {tickets.filter(ticket => ticket.category === uniqueCategory)
                             .map((filteredTicket, _index) => (
@@ -61,11 +62,11 @@ const Dashboard = () => {
                                     id={_index}
                                     color={colors[categoryIndex] || colors[0]}
                                     ticket={filteredTicket}
-                                />                
+                                />
                             ))
-                        }  
-                        
-                                                                                  
+                        }
+
+
                     </div>
                 ))}
             </div>
