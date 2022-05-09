@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar'
 import CalenderPage from './Pages/Calender'
 import CategoriesContext from './context'
 import LoginPage from './Pages/Login'
+import AdminPage from './Pages/AdminPage'
 
 const App = () => {
   const [categories, setCategories] = useState(null)
@@ -23,9 +24,13 @@ const App = () => {
             <Route path='/' element={<Dashboard />} />
             <Route path='/clients' element={<TicketPage />} />
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
-            <Route path='/EmployeePage' element={<EmployeePage />} />
+            <Route path='/employees' element={<EmployeePage />} />
+            <Route path='/adminpage:id' element={<AdminPage editMode={true}/>} />
+
             <Route path='/CalenderPage' element={<CalenderPage />} />
             <Route path='/LoginPage' element={<LoginPage />} />
+            <Route path='/AdminPage' element={<AdminPage />} />
+
 
           </Routes>
         </BrowserRouter>

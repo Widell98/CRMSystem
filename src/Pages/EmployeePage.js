@@ -2,69 +2,34 @@ import { useState, useEffect, useContext } from 'react'
 import EmployeeCard from '../Components/EmployeeCard'
 import axios from 'axios'
 import CategoriesContext from '../context'
-import Header from '../Components/Header'
+
 
 
 const EmployeePage = () => {
 
-    // const [tickets, setTickets] = useState(null)
-    // const {categories, setCategories } = useContext(CategoriesContext)
+    const [Employees, setTickets] = useState(null)
+    const {categories, setCategories } = useContext(CategoriesContext)
 
-    // useEffect(async () => {
-    //     const response = await axios.get('http://localhost:8000/Employees')
+    useEffect(async () => {
+        const response = await axios.get('http://localhost:8000/employees')
 
-    //     const dataObject = response.data.data
+        const dataObject = response.data.data
 
-    //     const arrayOfKeys = Object.keys(dataObject)
-    //     const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
-    //     const formattedArray = []
-    //     arrayOfKeys.forEach((key, index) => {
-    //       const formmatedData = { ...arrayOfData[index] }
-    //       formmatedData['documentId'] = key
-    //       formattedArray.push(formmatedData)
-    //     })
+        const arrayOfKeys = Object.keys(dataObject)
+        const arrayOfData = Object.keys(dataObject).map((key) => dataObject[key])
+        const formattedArray = []
+        arrayOfKeys.forEach((key, index) => {
+          const formmatedData = { ...arrayOfData[index] }
+          formmatedData['documentId'] = key
+          formattedArray.push(formmatedData)
+        })
 
-    //    setTickets(formattedArray)
-    // }, [])
+       setTickets(formattedArray)
+    }, [])
 
-    // useEffect(() => {
-    //     setCategories([...new Set(tickets?.map(({ category }) =>  category))])
-    // } , [tickets])
-
-    const Employees = [
-        {
-            "name": "David",
-            "role": "CEO",
-            "age": 50,
-            "avatar": "https://media.istockphoto.com/vectors/avatar-5-vector-id1131164548?k=20&m=1131164548&s=612x612&w=0&h=ODVFrdVqpWMNA1_uAHX_WJu2Xj3HLikEnbof6M_lccA=",
-            "email": "david.walle@hotmail.com",
-            "phonenumber": "0722354868"
-        },
-        {
-            "name": "David",
-            "role": "CEO",
-            "age": 50,
-            "avatar": "https://media.istockphoto.com/vectors/avatar-5-vector-id1131164548?k=20&m=1131164548&s=612x612&w=0&h=ODVFrdVqpWMNA1_uAHX_WJu2Xj3HLikEnbof6M_lccA=",
-            "email": "david.walle@hotmail.com",
-            "phonenumber": "0722354868"
-        },
-        {
-            "name": "David",
-            "role": "CEO",
-            "age": 50,
-            "avatar": "https://media.istockphoto.com/vectors/avatar-5-vector-id1131164548?k=20&m=1131164548&s=612x612&w=0&h=ODVFrdVqpWMNA1_uAHX_WJu2Xj3HLikEnbof6M_lccA=",
-            "email": "david.walle@hotmail.com",
-            "phonenumber": "0722354868"
-        },
-        {
-            "name": "David",
-            "role": "CEO",
-            "age": 50,
-            "avatar": "https://media.istockphoto.com/vectors/avatar-5-vector-id1131164548?k=20&m=1131164548&s=612x612&w=0&h=ODVFrdVqpWMNA1_uAHX_WJu2Xj3HLikEnbof6M_lccA=",
-            "email": "david.walle@hotmail.com",
-            "phonenumber": "0722354868"
-        },
-    ]
+    useEffect(() => {
+        setCategories([...new Set(Employees?.map(({ category }) =>  category))])
+    } , [Employees])
 
 
     const colors = [
@@ -80,6 +45,7 @@ const EmployeePage = () => {
     ]
 
 
+  
     return (
         <div className="dashboard">
             <h1 className="dashboard-title"> Agents </h1>
