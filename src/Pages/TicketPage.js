@@ -34,7 +34,7 @@ const TicketPage = ({ editMode }) => {
       })
       const success = response.status === 200
       if (success) {
-        navigate('/') // navigerar tillbaks till homepage om det är lyckat
+        navigate('/dashboard') // navigerar tillbaks till homepage om det är lyckat
       }
     }
 
@@ -44,7 +44,7 @@ const TicketPage = ({ editMode }) => {
       })
       const success = response.status === 200
       if (success) {
-        navigate('/') // navigerar tillbaks till homepage om det är lyckat
+        navigate('/dashboard') // navigerar tillbaks till homepage om det är lyckat
       }
     }
   }

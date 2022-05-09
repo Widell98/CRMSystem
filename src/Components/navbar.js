@@ -5,6 +5,7 @@ const Nav = () => {
     const navigate = useNavigate()
 
     return (
+
         <nav>
             <div className="logo-container">
                 <img src={logo} alt="logo" />
@@ -16,8 +17,6 @@ const Nav = () => {
                 <div className="icon" onClick={() => navigate('/EmployeePage')}>E</div>
                 <div className="icon" onClick={() => navigate('/LoginPage')}>D</div>
                 <div className="icon" onClick={() => navigate('/CalenderPage')}>C</div>
-                
-
             </div>
         </nav>
     )
