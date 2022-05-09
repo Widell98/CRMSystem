@@ -19,14 +19,12 @@ const App = () => {
           <Navbar />
 
           <Routes>
-
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<LoginPage />} />
+            <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/clients' element={<TicketPage />} />
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
             <Route path='/EmployeePage' element={<EmployeePage />} />
             <Route path='/CalenderPage' element={<CalenderPage />} />
-            <Route path='/LoginPage' element={<LoginPage />} />
-
           </Routes>
         </BrowserRouter>
       </CategoriesContext.Provider>
