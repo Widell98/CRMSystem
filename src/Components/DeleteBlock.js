@@ -8,7 +8,6 @@ const DeleteBlock = ({ documentId }) => {
     if (success) window.location.reload()
   }
 
-
   return (
     <div className="delete-block">
       <div className="delete-icon" onClick={deleteTicket}>X</div>

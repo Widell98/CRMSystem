@@ -14,6 +14,7 @@ const url = 'https://07dd3ed3-c8ec-4544-9917-cd74580d8ed3-us-east1.apps.astra.da
 const token = 'AstraCS:ROaZebRsNmEshfrRGqZFySqJ:94060cfd1ebc7efb58537b922b4c69d481af62ac8fe2c80de7dafc385131af6f'
 
 
+
 app.get('/clients', async (req, res) => {
     const options = {
         method: 'GET',
@@ -51,6 +52,7 @@ app.get('/clients/:documentId', async (req, res) => {
         res.status(500).json({ message: err })
       }
     })
+
 
 app.post('/clients', async (req, res) => {
     const formData = req.body.formData
@@ -120,7 +122,7 @@ app.delete('/clients/:documentId', async (req, res) => {
 
 // Employees
 
-app.get('/Employees', async (req, res) => {
+app.get('/employees', async (req, res) => {
     const options = {
         method: 'GET',
         headers: {
@@ -136,6 +138,94 @@ app.get('/Employees', async (req, res) => {
         res.status(500).json({ message: err })
     }
 })
+
+
+// Hämta en post
+app.get('/employees/:documentId', async (req, res) => {
+    const id = req.params.documentId
+
+    const options = {
+        method: 'GET',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token, 
+            'Content-Type': 'application/json',
+        },
+    }
+    try {
+        const response = await axios(`${employeeurl}/${id}`, options)
+        res.status(200).json(response.data)
+      } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+      }
+    })
+
+
+//Skapa en anställd 
+app.post('/employees', async (req, res) => {
+    const formData = req.body.formData
+
+    const options = {
+        method: 'POST',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token,
+            'Content-Type': 'application/json'
+        },
+        data: formData,
+    }
+
+    try {
+        const response = await axios(employeeurl, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
+
+app.put('/employees/:documentId', async (req, res) => {
+    const id = req.params.documentId
+    const data = req.body.data
+
+    const options = {
+        method: 'PUT',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token, 
+        },
+        data
+    }
+    try {
+        const response = await axios(`${employeeurl}/${id}`, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
+
+
+app.delete('/employees/:documentId', async (req, res) => {
+    const id = req.params.documentId
+
+    const options = {
+        method: 'DELETE',
+        headers: {
+            Accepts: 'application/json',
+            'X-Cassandra-Token': token
+        }
+    }
+    try {
+        const response = await axios(`${employeeurl}/${id}`, options)
+        res.status(200).json(response.data)
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({ message: err })
+    }
+})
+
 
 
 app.listen(PORT, () => console.log('listening on port' + PORT))

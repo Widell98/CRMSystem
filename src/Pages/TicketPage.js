@@ -172,6 +172,7 @@ const TicketPage = ({ editMode }) => {
 
             {editMode && (
               <>
+                  <label htmlFor="progress">Progress</label>
                 <input
                   type="range"
                   id="progress"
@@ -181,7 +182,6 @@ const TicketPage = ({ editMode }) => {
                   max="100"
                   onChange={handleChange}
                 />
-                <label htmlFor="progress">Progress</label>
 
                 <label>Status</label>
                 <select
