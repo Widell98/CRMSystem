@@ -50,11 +50,22 @@ nav .logo-container img {
   width: 25px;
 }
 
+nav .icon.iconhouse {
+  width: 100%;
+}
+
 nav .icon {
   color: rgb(255, 255, 255);
 }
 
 /* Dashboard */
+.Header-display {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .dashboard {
   padding: 35px;
   width: 100%;
@@ -79,7 +90,15 @@ nav .icon {
 .ticket-card {
   display: flex;
   width: 100%;
+}
 
+.ticket-location {
+  font-family: 'Rubik', sans-serif;
+}
+.ticket-Telephone
+{
+  font-size: 26px;
+  font-family: 'Rubik', sans-serif;
 }
 
 .ticket-card #link {
@@ -166,14 +185,14 @@ nav .icon {
 }
 
 .ticket-card .delete-block .delete-icon {
-  width: 20px;
-  height: 20px;
+height: 20px; 
+  /* width: 20px;
   border-radius: 10px;
   background-color: rgb(61, 61, 61);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);   */
 }
 
 /* ---- Ticket page ---- */
@@ -218,6 +237,12 @@ nav .icon {
   margin: 20px 0 20px 10;
 }
 
+#description {
+  display: flex;
+  height:200px;
+  display: inline-block;
+
+}
 
 /* LoginPage */
 

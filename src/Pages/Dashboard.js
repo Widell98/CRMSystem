@@ -27,9 +27,9 @@ const Dashboard = () => {
         setTickets(formattedArray)
     }, [])
 
-    useEffect(() => {
-        setCategories([...new Set(tickets?.map(({ category }) => category))])
-    }, [tickets])
+  useEffect(() => {
+    setCategories([...new Set(tickets?.map(({ category }) => category))])
+  }, [tickets])
 
 
     const colors = [
@@ -47,10 +47,10 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <h1 className="dashboard-title"> My projects</h1>
+            <h1 className="dashboard-title"> Among People</h1>
             <div className="ticket-container">
 
-                <Header />
+                {/* <Header /> */}
 
 
                 {tickets && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
@@ -65,8 +65,6 @@ const Dashboard = () => {
                                 />
                             ))
                         }
-
-
                     </div>
                 ))}
             </div>

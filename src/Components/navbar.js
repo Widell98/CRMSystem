@@ -1,8 +1,12 @@
 import logo from '../images/crm-logo.png'
 import { useNavigate } from 'react-router-dom'
 
+
+
+
 const Nav = () => {
     const navigate = useNavigate()
+
 
     return (
 
@@ -13,10 +17,11 @@ const Nav = () => {
             </div>
             <div className="controls-container">
                 <div className="icon" onClick={() => navigate('/clients')}>+</div>
-                <div className="icon" onClick={() => navigate('/')}>↞</div>
+                <div className="icon" onClick={() => navigate('/dashboard')}>-</div>    
+             
                 <div className="icon" onClick={() => navigate('/employees')}>E</div>
                 <div className="icon" onClick={() => navigate('/LoginPage')}>D</div>
-                <div className="icon" onClick={() => navigate('/CalenderPage')}>C</div>
+                {/* <div className="icon" onClick={() => navigate('/CalenderPage')}>C</div> */}
             </div>
         </nav>
     )

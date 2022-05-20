@@ -1,11 +1,11 @@
 const Header = () => {
     return (
         <div className ="Header-display">
-           {/* <h1> Kunder </h1>
-           <h1> Projektledare </h1>
-           <h1> Team </h1>
-           <h1> Location </h1>
-           <h1> Datum </h1> */}
+           <h2> Kunder </h2>
+           <h2> Projektledare </h2>
+           <h2> Team </h2>
+           <h2> Location </h2>
+           <h2> Datum </h2>
         </div>
     )
 }

@@ -13,7 +13,9 @@ const App = () => {
   const [categories, setCategories] = useState(null)
   const value = { categories, setCategories }
 
+
   return (
+    
     <div className="app">
       <CategoriesContext.Provider value={value}>
         <BrowserRouter>
@@ -25,12 +27,11 @@ const App = () => {
             <Route path='/clients' element={<TicketPage />} />
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
             <Route path='/employees' element={<EmployeePage />} />
-            <Route path='/adminpage:id' element={<AdminPage editMode={true}/>} />
+            <Route path='/Adminpage:id' element={<AdminPage editMode={true}/>} />
 
             <Route path='/CalenderPage' element={<CalenderPage />} />
             <Route path='/LoginPage' element={<LoginPage />} />
             <Route path='/AdminPage' element={<AdminPage />} />
-
 
           </Routes>
         </BrowserRouter>

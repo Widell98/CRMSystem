@@ -8,8 +8,7 @@ const TicketPage = ({ editMode }) => {
   const [formData, setFormData] = useState({
     status: 'not started',
     progress: 0,
-    // category: categories[0],
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   })
   const { categories, setCategories } = useContext(CategoriesContext)
   const navigate = useNavigate()
@@ -100,8 +99,8 @@ const TicketPage = ({ editMode }) => {
               required={true}
               value={formData.description}
             />
-
-            <label>Employee</label>
+ 
+            {/* <label>Employee</label>
             <select
               name="category"
               value={formData.category}
@@ -110,7 +109,7 @@ const TicketPage = ({ editMode }) => {
               {categories?.map((category, _index) => (
                 <option value={category}>{category}</option>
               ))}
-            </select>
+            </select> */}
 
             <label htmlFor="new-category">Add Employee</label>
             <input
@@ -215,6 +214,16 @@ const TicketPage = ({ editMode }) => {
           </section>
 
           <section>
+            <label htmlFor="Compensation"> Compensation </label>
+            <input
+              id="Compensation"
+              name="Compensation"
+              type="text"
+              onChange={handleChange}
+              required={true}
+              value={formData.Compensation}
+            />
+
             <label htmlFor="Telephone"> Telephone </label>
             <input
               id="Telephone"
