@@ -48,7 +48,7 @@ const EmployeePage = () => {
   
     return (
         <div className="dashboard">
-            <h1 className="dashboard-title"> Agents </h1>
+            <h1 className="dashboard-title"> Promoters </h1>
             <div className="ticket-container">
                 {Employees && uniqueCategories?.map((uniqueCategory, categoryIndex) => (
                     <div key={categoryIndex}>

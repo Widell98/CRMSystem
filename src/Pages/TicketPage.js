@@ -25,7 +25,7 @@ const TicketPage = ({ editMode }) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+  e.preventDefault();
 
     if (editMode) {
       const response = await axios.put(`http://localhost:8000/clients/${id}`, {
@@ -67,11 +67,11 @@ const TicketPage = ({ editMode }) => {
 
   return (
     <div className="ticket">
-      <h1>{editMode ? 'Update Your Ticket' : 'Add a client'}</h1>
+      <h1>{editMode ? 'Update case' : 'New case'}</h1>
       <div className="ticket-container">
         <form onSubmit={handleSubmit}>
           <section>
-            <label htmlFor="title">Company Name</label>
+            <label htmlFor="title">Company</label>
             <input
               id="title"
               name="title"
@@ -91,7 +91,7 @@ const TicketPage = ({ editMode }) => {
             />
 
             <label className="description-label" htmlFor="description">Description</label>
-            <input
+            <textarea
               id="description"
               name="description"
               type="text"
@@ -119,7 +119,7 @@ const TicketPage = ({ editMode }) => {
               onChange={handleChange}
               value={formData.category}
             />
-
+{/* 
             <label>Priority</label>
             <div className="multiple-input-container">
               <input
@@ -167,11 +167,11 @@ const TicketPage = ({ editMode }) => {
                 checked={formData.priority == 5}
               />
               <label htmlFor="priority-5">5</label>
-            </div>
+            </div> */}
 
             {editMode && (
               <>
-                  <label htmlFor="progress">Progress</label>
+                  {/* <label htmlFor="progress">Progress</label>
                 <input
                   type="range"
                   id="progress"
@@ -180,7 +180,7 @@ const TicketPage = ({ editMode }) => {
                   min="0"
                   max="100"
                   onChange={handleChange}
-                />
+                /> */}
 
                 <label>Status</label>
                 <select
@@ -189,7 +189,7 @@ const TicketPage = ({ editMode }) => {
                   onChange={handleChange}
                 >
                   <option selected={formData.status == 'done'} value="done">
-                    Done
+                    Finished
                   </option>
                   <option
                     selected={formData.status == 'working on it'}

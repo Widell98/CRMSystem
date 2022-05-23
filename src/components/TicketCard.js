@@ -16,9 +16,9 @@ const TicketCard = ({ color, ticket }) => {
                 <AvatarDisplay ticket={ticket}/>
                 <h3 className="ticket-location">{ticket.location}</h3>
                 <h3 className="ticket-Telephone">{ticket.Telephone}</h3>
-                <StatusDisplay status={ticket.status}/>             
+                {/* <StatusDisplay status={ticket.status}/>              */}
                 {/* <PriorityDisplay priority={ticket.priority} /> */}
-                <ProgressDisplay progress={ticket.progress} />
+                {/* <ProgressDisplay progress={ticket.progress} /> */}
             </Link>
             
          <DeleteBlock documentId={ticket.documentId}/>
