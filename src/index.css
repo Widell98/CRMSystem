@@ -37,13 +37,21 @@ nav {
 
 nav .logo-container,
 nav .controls-container {
-  padding: 40px 25px;
+  padding: 40px 15px;
   display: flex;
   flex-direction: column;
+  
 }
 
-nav .controls-container .icon {
-  width: 0;
+.BsMegaphoneFill{
+  padding: 5px;
+
+}
+.BsFillHouseDoorFill{
+  padding: 5px;
+}
+.BsFillPersonFill{
+  padding: 5px;
 }
 
 nav .logo-container img {
@@ -206,7 +214,6 @@ height: 20px;
   width: 100%;
   display: flex;
   justify-content: left;
-
 }
 
 .ticket form {

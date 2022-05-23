@@ -1,6 +1,8 @@
 import logo from '../images/ap_logo.png'
 import { useNavigate } from 'react-router-dom'
-
+import { BsFillPersonFill } from "react-icons/bs";
+import { BsMegaphoneFill } from "react-icons/bs";
+import { BsFillHouseDoorFill } from "react-icons/bs";
 
 
 
@@ -16,11 +18,10 @@ const Nav = () => {
 
             </div>
             <div className="controls-container">
-                <div className="icon" onClick={() => navigate('/clients')}>+</div>
-                <div className="icon" onClick={() => navigate('/dashboard')}>-</div>    
-             
-                <div className="icon" onClick={() => navigate('/employees')}>E</div>
-                <div className="icon" onClick={() => navigate('/LoginPage')}>D</div>
+                <div className="BsMegaphoneFill" onClick={() => navigate('/clients')}><BsMegaphoneFill/></div>
+                <div className="BsFillHouseDoorFill" onClick={() => navigate('/dashboard')}><BsFillHouseDoorFill/></div>
+                <div className="BsFillPersonFill" onClick={() => navigate('/employees')}><BsFillPersonFill/></div>
+                <div className="icon" onClick={() => navigate('/LoginPage')}></div>
                 {/* <div className="icon" onClick={() => navigate('/CalenderPage')}>C</div> */}
             </div>
         </nav>
@@ -28,4 +29,3 @@ const Nav = () => {
 }
 
 export default Nav
-

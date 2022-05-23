@@ -47,7 +47,7 @@ const Dashboard = () => {
 
     return (
         <div className="dashboard">
-            <h1 className="dashboard-title"> Among People</h1>
+            <h1 className="dashboard-title"> Active cases</h1>
             <div className="ticket-container">
 
                 {/* <Header /> */}
