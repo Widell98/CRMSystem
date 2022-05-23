@@ -25,7 +25,7 @@ const TicketPage = ({ editMode }) => {
   }
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
     if (editMode) {
       const response = await axios.put(`http://localhost:8000/clients/${id}`, {
@@ -100,7 +100,7 @@ const TicketPage = ({ editMode }) => {
               value={formData.description}
             />
  
-            {/* <label>Employee</label>
+            <label>Employee</label>
             <select
               name="category"
               value={formData.category}
@@ -109,16 +109,17 @@ const TicketPage = ({ editMode }) => {
               {categories?.map((category, _index) => (
                 <option value={category}>{category}</option>
               ))}
-            </select> */}
+            </select>
 
             <label htmlFor="new-category">Add Employee</label>
-            <input
+            <select
               id="new-category"
               name="category"
               type="text"
               onChange={handleChange}
               value={formData.category}
             />
+            
 {/* 
             <label>Priority</label>
             <div className="multiple-input-container">

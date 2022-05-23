@@ -13,14 +13,12 @@ const App = () => {
   const [categories, setCategories] = useState(null)
   const value = { categories, setCategories }
 
-
   return (
     
     <div className="app">
       <CategoriesContext.Provider value={value}>
         <BrowserRouter>
           <Navbar />
-
           <Routes>
             <Route path='/' element={<LoginPage />} />
             <Route path='/dashboard' element={<Dashboard />} />
