@@ -20,7 +20,6 @@ const App = () => {
       <CategoriesContext.Provider value={value}>
         <BrowserRouter>
           <Navbar />
-
           <Routes>
             <Route path='/' element={<LoginPage />} />
             <Route path='/dashboard' element={<Dashboard />} />
@@ -28,11 +27,9 @@ const App = () => {
             <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
             <Route path='/employees' element={<EmployeePage />} />
             <Route path='/Adminpage:id' element={<AdminPage editMode={true}/>} />
-
             <Route path='/CalenderPage' element={<CalenderPage />} />
             <Route path='/LoginPage' element={<LoginPage />} />
             <Route path='/AdminPage' element={<AdminPage />} />
-
           </Routes>
         </BrowserRouter>
       </CategoriesContext.Provider>
