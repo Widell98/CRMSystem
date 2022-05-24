@@ -4,29 +4,34 @@ import axios from 'axios'
 import CategoriesContext from '../context'
 
 const TicketPage = ({ editMode }) => {
-
+  
   const [formData, setFormData] = useState({
     status: 'not started',
     progress: 0,
     timestamp: new Date().toISOString(),
   })
   const { categories, setCategories } = useContext(CategoriesContext)
-  const navigate = useNavigate()
-  let { id } = useParams()
+  const navigate = useNavigate();
+  let { id } = useParams();
 
+  const refreshPage = () => {
+    navigate(0);
+}
+  
+refreshPage();
   const handleChange = (e) => {
     const value = e.target.value
     const name = e.target.name
-
+    
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }))
   }
-
+  
   const handleSubmit = async (e) => {
-  e.preventDefault()
-
+    e.preventDefault()
+    
     if (editMode) {
       const response = await axios.put(`http://localhost:8000/clients/${id}`, {
         data: formData,
@@ -36,7 +41,7 @@ const TicketPage = ({ editMode }) => {
         navigate('/dashboard') // navigerar tillbaks till homepage om det är lyckat
       }
     }
-
+    
     if (!editMode) {
       const response = await axios.post('http://localhost:8000/clients', {
         formData,
@@ -47,23 +52,24 @@ const TicketPage = ({ editMode }) => {
       }
     }
   }
-
+  
   const fetchData = async () => {
     const response = await axios.get(`http://localhost:8000/clients/${id}`)
     console.log('AAAAAA', response)
     setFormData(response.data.data)
   }
-
+  
   useEffect(() => {
     if (editMode) {
       fetchData()
     }
   }, [])
-
+  
   console.log('EDITcategories', categories)
   console.log('formData', formData.status)
   console.log('formData.status', formData.status === 'stuck')
-
+  
+  
 
   return (
     <div className="ticket">
@@ -79,7 +85,7 @@ const TicketPage = ({ editMode }) => {
               onChange={handleChange}
               required={true}
               value={formData.title}
-            />
+              />
 
             <label htmlFor="location">Location</label>
             <input
@@ -100,7 +106,7 @@ const TicketPage = ({ editMode }) => {
               value={formData.description}
             />
  
-            <label>Employee</label>
+            {/* <label>Employee</label>
             <select
               name="category"
               value={formData.category}
@@ -109,10 +115,10 @@ const TicketPage = ({ editMode }) => {
               {categories?.map((category, _index) => (
                 <option value={category}>{category}</option>
               ))}
-            </select>
+            </select> */}
 
-            <label htmlFor="new-category">Add Employee</label>
-            <select
+            <label htmlFor="new-category">Add agent</label>
+            <input
               id="new-category"
               name="category"
               type="text"

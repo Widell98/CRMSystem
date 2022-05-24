@@ -9,27 +9,30 @@ import CategoriesContext from './context'
 import LoginPage from './Pages/Login'
 import AdminPage from './Pages/AdminPage'
 
+
+
 const App = () => {
   const [categories, setCategories] = useState(null)
   const value = { categories, setCategories }
+
 
   return (
     
     <div className="app">
       <CategoriesContext.Provider value={value}>
-        <BrowserRouter>
-          <Navbar />
+        <BrowserRouter forceRefresh={true}>
+          <Navbar/>
           <Routes>
-            <Route path='/' element={<LoginPage />} />
-            <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/clients' element={<TicketPage />} />
-            <Route path='/clients/:id' element={<TicketPage editMode={true} />} />
-            <Route path='/employees' element={<EmployeePage />} />
-            <Route path='/Adminpage:id' element={<AdminPage editMode={true}/>} />
+            <Route exact path='/' element={<LoginPage />} />
+            <Route exact path='/dashboard' element={<Dashboard />} />
+            <Route exact path='/clients'  element={<TicketPage />} />
+            <Route exact path='/clients/:id' element={<TicketPage editMode={true} />} />
+            <Route exact path='/employees' element={<EmployeePage />} />
+            <Route exact path='/Adminpage:id' element={<AdminPage editMode={true}/>} />
 
-            <Route path='/CalenderPage' element={<CalenderPage />} />
-            <Route path='/LoginPage' element={<LoginPage />} />
-            <Route path='/AdminPage' element={<AdminPage />} />
+            <Route exact path='/CalenderPage' element={<CalenderPage />} />
+            <Route exact path='/LoginPage' element={<LoginPage />} />
+            <Route exact path='/AdminPage' element={<AdminPage />} />
 
           </Routes>
         </BrowserRouter>
